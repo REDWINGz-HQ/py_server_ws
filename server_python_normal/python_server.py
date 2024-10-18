@@ -25,9 +25,9 @@ async def handle_message(message,sender_name):
     
     # Ensure that 'uuid' and 'message' keys exist
     if "uuid" not in message_json or "message" not in message_json:
-        raise KeyError("Missing 'uuid' or 'message' in the received JSON.")
+        raise KeyError("Missing 'id' or 'message' in the received JSON.")
     
-    target_client = message_json["uuid"]
+    target_client = message_json["id"]
     data = message_json["message"]
     
     if target_client in clients:
